@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Town & Country Crafts | Domestic Thermal Systems & Home Preservation Journal</title>
+    <meta name="description" content="An authoritative digital publication dedicated to rural & suburban home craft, domestic water heating efficiency, winter thermal protection, and tankless plumbing mechanics.">
+    
+    <!-- Custom SVG Favicon (Terracotta & Brass Flame/Spigot Emblem) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%232D1B18'/><path d='M50 15 C35 32 25 45 25 60 C25 73 36 84 50 84 C64 84 75 73 75 60 C75 45 65 32 50 15 Z' fill='%23D96B43'/><path d='M50 35 C42 46 36 55 36 64 C36 71 42 77 50 77 C58 77 64 71 64 64 C64 55 58 46 50 35 Z' fill='%23E09F3E'/><circle cx='50' cy='64' r='5' fill='%23FFF8F0'/></svg>" type="image/svg+xml">
+
+    <!-- Google Fonts: Space Grotesk, Syne, and Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           UNIQUE VISUAL SYSTEM: "Terracotta Thermal Brutalism"
+           Palette: Burnt Terracotta (#D96B43), Aged Brass (#E09F3E), Deep Charcoal Espresso (#2D1B18), Warm Parchment (#FFF8F0), Forest Sage (#3B5249)
+           Layout Engine: Asymmetric Split Stacks, Diagonal Offset Badges, and Tactile Inset Borders
+           ========================================================================== */
+        :root {
+            --bg-base: #FFF8F0;
+            --bg-surface: #FFFFFF;
+            --bg-dark: #2D1B18;            /* Deep Charcoal Espresso */
+            --bg-dark-card: #3D2622;
+            --text-main: #2D1B18;
+            --text-muted: #6B5550;
+            --text-light: #FFF8F0;
+            --accent-terracotta: #D96B43;   /* Burnt Terracotta Primary */
+            --accent-terracotta-hover: #C0542C;
+            --accent-brass: #E09F3E;        /* Aged Brass Secondary */
+            --accent-sage: #3B5249;         /* Rustic Forest Accent */
+            --border-soft: rgba(45, 27, 24, 0.1);
+            --border-terracotta: rgba(217, 107, 67, 0.3);
+            --shadow-flat: 8px 8px 0px #2D1B18;
+            --shadow-brass: 8px 8px 0px #E09F3E;
+            --radius-sharp: 2px;
+            --radius-rounded: 18px;
+            --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Base Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            line-height: 1.75;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(var(--accent-terracotta) 0.75px, transparent 0.75px),
+                radial-gradient(var(--accent-brass) 0.75px, var(--bg-base) 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            background-opacity: 0.15;
+        }
+
+        h1, h2, h3, .font-heading {
+            font-family: 'Syne', sans-serif;
+            letter-spacing: -0.03em;
+            line-height: 1.12;
+        }
+
+        .font-mono-style {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        a {
+            color: var(--accent-terracotta);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--accent-terracotta-hover);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Container Layout */
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-padding {
+            padding: 6.5rem 0;
+        }
+
+        /* Asymmetric Layout Engines */
+        .asym-hero-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 3.5rem;
+            align-items: center;
+        }
+
+        .asym-split-2 {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 3.5rem;
+            align-items: center;
+        }
+
+        /* Section Headings */
+        .section-header {
+            margin-bottom: 3.5rem;
+            text-align: center;
+        }
+
+        .section-header.text-left {
+            text-align: left;
+        }
+
+        .badge-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.45rem 1.2rem;
+            background: rgba(217, 107, 67, 0.12);
+            color: var(--accent-terracotta);
+            border: 2px solid var(--accent-terracotta);
+            border-radius: var(--radius-sharp);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1.2rem;
+            box-shadow: 3px 3px 0px var(--bg-dark);
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--bg-dark);
+            line-height: 1.15;
+        }
+
+        .section-title span {
+            color: var(--accent-terracotta);
+            font-style: italic;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 400;
+        }
+
+        /* Tactile Inset Cards */
+        .portal-card {
+            background: var(--bg-surface);
+            border: 2.5px solid var(--bg-dark);
+            border-radius: var(--radius-sharp);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-flat);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .portal-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0px var(--accent-terracotta);
+            border-color: var(--bg-dark);
+        }
+
+        /* Action Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 2.2rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            border-radius: var(--radius-sharp);
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2.5px solid var(--bg-dark);
+        }
+
+        .btn-terracotta {
+            background: var(--accent-terracotta);
+            color: #FFFFFF;
+            box-shadow: 4px 4px 0px var(--bg-dark);
+        }
+
+        .btn-terracotta:hover {
+            background: var(--accent-terracotta-hover);
+            color: #FFFFFF;
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px var(--bg-dark);
+        }
+
+        .btn-dark {
+            background: var(--bg-dark);
+            color: var(--text-light);
+            box-shadow: 4px 4px 0px var(--accent-brass);
+        }
+
+        .btn-dark:hover {
+            background: #402824;
+            color: var(--accent-brass);
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px var(--accent-terracotta);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--bg-dark);
+            box-shadow: 4px 4px 0px var(--bg-dark);
+        }
+
+        .btn-outline:hover {
+            background: var(--bg-dark);
+            color: var(--text-light);
+        }
+
+        /* Custom Asymmetric Visual Separator */
+        .terr-divider {
+            width: 100%;
+            height: 24px;
+            background: var(--accent-terracotta);
+            border-top: 2px solid var(--bg-dark);
+            border-bottom: 2px solid var(--bg-dark);
+            margin: -1px 0;
+            background-image: repeating-linear-gradient(45deg, var(--bg-dark) 0, var(--bg-dark) 10px, transparent 0, transparent 20px);
+            opacity: 0.9;
+        }
+
+        /* ==========================================================================
+           SECTION 1: Sticky Navigation Bar
+           ========================================================================== */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 248, 240, 0.95);
+            backdrop-filter: blur(16px);
+            border-bottom: 2.5px solid var(--bg-dark);
+            padding: 1.1rem 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            text-decoration: none;
+        }
+
+        .logo-emblem {
+            width: 44px;
+            height: 44px;
+            background: var(--bg-dark);
+            border: 2px solid var(--accent-terracotta);
+            border-radius: var(--radius-sharp);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-brass);
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 1.4rem;
+            box-shadow: 3px 3px 0px var(--accent-terracotta);
+        }
+
+        .brand-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--bg-dark);
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .brand-title span {
+            display: block;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.82rem;
+            color: var(--accent-terracotta);
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-terracotta);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.6rem;
+            color: var(--bg-dark);
+            cursor: pointer;
+        }
+
+        /* ==========================================================================
+           SECTION 2: Dynamic Hero Section
+           ========================================================================== */
+        .hero-section {
+            padding: 5rem 0 6.5rem 0;
+            position: relative;
+        }
+
+        .hero-headline {
+            font-size: 3.3rem;
+            line-height: 1.1;
+            color: var(--bg-dark);
+            margin-bottom: 1.4rem;
+        }
+
+        .hero-subhead {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 92%;
+            line-height: 1.75;
+        }
+
+        .hero-frame {
+            position: relative;
+        }
+
+        .hero-img-main {
+            border-radius: var(--radius-sharp);
+            box-shadow: 12px 12px 0px var(--bg-dark);
+            width: 100%;
+            height: 490px;
+            object-fit: cover;
+            border: 2.5px solid var(--bg-dark);
+        }
+
+        .hero-alert-badge {
+            position: absolute;
+            bottom: -25px;
+            left: -25px;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            padding: 1.25rem 1.75rem;
+            border-radius: var(--radius-sharp);
+            box-shadow: 6px 6px 0px var(--accent-brass);
+            border: 2px solid var(--accent-terracotta);
+            max-width: 290px;
+        }
+
+        .hero-alert-badge h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.95rem;
+            color: var(--accent-brass);
+        }
+
+        .hero-alert-badge p {
+            font-size: 0.82rem;
+            color: rgba(255, 248, 240, 0.75);
+            margin-top: 0.2rem;
+        }
+
+        /* ==========================================================================
+           SECTION 3: Quick Stats & Achievements Grid
+           ========================================================================== */
+        .stats-banner {
+            background: var(--bg-dark);
+            color: var(--text-light);
+            padding: 4.5rem 0;
+            border-radius: var(--radius-sharp);
+            margin-bottom: 2rem;
+            border: 2.5px solid var(--accent-terracotta);
+            box-shadow: var(--shadow-brass);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-card {
+            padding: 1rem;
+            border-right: 1px solid rgba(255, 248, 240, 0.12);
+        }
+
+        .stat-card:last-child {
+            border-right: none;
+        }
+
+        .stat-number {
+            font-family: 'Syne', sans-serif;
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: var(--accent-terracotta);
+            margin-bottom: 0.2rem;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem;
+            color: rgba(255, 248, 240, 0.75);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        /* ==========================================================================
+           SECTION 4: Platform Overview / Editorial Mission Section
+           ========================================================================== */
+        .mission-panel {
+            background: var(--bg-surface);
+            border-radius: var(--radius-sharp);
+            padding: 4rem;
+            border: 2.5px solid var(--bg-dark);
+            box-shadow: var(--shadow-flat);
+        }
+
+        /* ==========================================================================
+           SECTION 5: Main Featured Article Section (SEO / Anchor Placement)
+           ========================================================================== */
+        .article-container {
+            background: var(--bg-surface);
+            border-radius: var(--radius-sharp);
+            padding: 4.5rem;
+            box-shadow: var(--shadow-flat);
+            border: 2.5px solid var(--bg-dark);
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            border-bottom: 2px solid var(--border-soft);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2.2rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .article-body h2 {
+            font-size: 1.9rem;
+            color: var(--bg-dark);
+            margin: 2.5rem 0 1.2rem 0;
+        }
+
+        .article-body h3 {
+            font-size: 1.4rem;
+            color: var(--accent-terracotta);
+            margin: 2rem 0 1rem 0;
+        }
+
+        .article-body p {
+            margin-bottom: 1.6rem;
+            font-size: 1.1rem;
+            color: #3D2925;
+            line-height: 1.85;
+        }
+
+        .article-body ul {
+            margin: 1.2rem 0 1.8rem 2rem;
+            font-size: 1.08rem;
+            color: #3D2925;
+        }
+
+        .article-body li {
+            margin-bottom: 0.75rem;
+        }
+
+        .backlink-anchor {
+            color: var(--bg-dark);
+            font-weight: 700;
+            background: rgba(224, 159, 62, 0.22);
+            padding: 0.25rem 0.55rem;
+            border-bottom: 2.5px solid var(--accent-terracotta);
+            transition: var(--transition);
+        }
+
+        .backlink-anchor:hover {
+            color: #FFFFFF;
+            background: var(--accent-terracotta);
+            border-color: var(--bg-dark);
+        }
+
+        .article-quote {
+            background: rgba(217, 107, 67, 0.06);
+            border-left: 4px solid var(--accent-terracotta);
+            padding: 1.8rem 2.2rem;
+            margin: 2.2rem 0;
+            border-radius: 0;
+            font-style: italic;
+            font-size: 1.15rem;
+            color: var(--bg-dark);
+        }
+
+        /* ==========================================================================
+           SECTION 6: Core Features & Key Value Grid
+           ========================================================================== */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-icon-box {
+            width: 58px;
+            height: 58px;
+            background: rgba(224, 159, 62, 0.18);
+            border: 2px solid var(--bg-dark);
+            border-radius: var(--radius-sharp);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-terracotta);
+            font-size: 1.6rem;
+            margin-bottom: 1.4rem;
+            box-shadow: 3px 3px 0px var(--bg-dark);
+        }
+
+        /* ==========================================================================
+           SECTION 7: Visual Breakdown / Step-by-Step Architecture Guide
+           ========================================================================== */
+        .step-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .step-card {
+            display: flex;
+            gap: 1.75rem;
+            background: var(--bg-surface);
+            padding: 2rem;
+            border-radius: var(--radius-sharp);
+            border: 2.5px solid var(--bg-dark);
+            box-shadow: 4px 4px 0px var(--bg-dark);
+        }
+
+        .step-index {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-dark);
+            color: var(--accent-brass);
+            border-radius: var(--radius-sharp);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            border: 1px solid var(--accent-terracotta);
+        }
+
+        /* ==========================================================================
+           SECTION 8: Comprehensive Comparison Table / Value Matrix
+           ========================================================================== */
+        .table-responsive {
+            overflow-x: auto;
+            border-radius: var(--radius-sharp);
+            border: 2.5px solid var(--bg-dark);
+            box-shadow: var(--shadow-flat);
+        }
+
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-surface);
+            text-align: left;
+        }
+
+        .matrix-table th {
+            background: var(--bg-dark);
+            color: var(--text-light);
+            padding: 1.3rem 1.6rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.88rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .matrix-table td {
+            padding: 1.2rem 1.6rem;
+            border-bottom: 1px solid var(--border-soft);
+            font-size: 0.98rem;
+        }
+
+        .matrix-table tr:hover {
+            background: rgba(217, 107, 67, 0.04);
+        }
+
+        /* ==========================================================================
+           SECTION 9: Interactive FAQ Section (Accordion)
+           ========================================================================== */
+        .faq-accordion {
+            max-width: 920px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+        }
+
+        .faq-item {
+            background: var(--bg-surface);
+            border: 2.5px solid var(--bg-dark);
+            border-radius: var(--radius-sharp);
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: 4px 4px 0px var(--bg-dark);
+        }
+
+        .faq-question {
+            padding: 1.4rem 2rem;
+            font-family: 'Syne', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--bg-dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: left;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease-out;
+            padding: 0 2rem;
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 280px;
+            padding: 0 2rem 1.6rem 2rem;
+        }
+
+        .faq-icon {
+            font-size: 1.3rem;
+            color: var(--accent-terracotta);
+            transition: var(--transition);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        /* ==========================================================================
+           SECTION 10: Expert Tips & Best Practices Cards
+           ========================================================================== */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .tip-card {
+            border-top: 6px solid var(--accent-terracotta);
+        }
+
+        /* ==========================================================================
+           SECTION 11: User Feedback & Testimonials Showcase
+           ========================================================================== */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+        }
+
+        .author-box {
+            display: flex;
+            align-items: center;
+            gap: 1.1rem;
+            margin-top: 1.6rem;
+        }
+
+        .author-avatar {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2.5px solid var(--bg-dark);
+        }
+
+        /* ==========================================================================
+           SECTION 12: Highlighted Resource Banner / Quick Action Callout
+           ========================================================================== */
+        .resource-banner {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #3D2622 100%);
+            border-radius: var(--radius-sharp);
+            padding: 4.5rem 3.5rem;
+            color: #FFFFFF;
+            position: relative;
+            overflow: hidden;
+            border: 2.5px solid var(--accent-terracotta);
+            box-shadow: 8px 8px 0px var(--accent-brass);
+        }
+
+        /* ==========================================================================
+           SECTION 13: Functional Contact Form Section
+           ========================================================================== */
+        .contact-card {
+            background: var(--bg-surface);
+            border-radius: var(--radius-sharp);
+            padding: 4rem;
+            border: 2.5px solid var(--bg-dark);
+            box-shadow: var(--shadow-flat);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+        }
+
+        .form-group.full {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--bg-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .form-control {
+            padding: 0.95rem 1.25rem;
+            border: 2.5px solid var(--bg-dark);
+            border-radius: var(--radius-sharp);
+            background: var(--bg-base);
+            font-family: inherit;
+            font-size: 0.98rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-terracotta);
+            background: #FFFFFF;
+        }
+
+        /* ==========================================================================
+           SECTION 14: Comprehensive Footer
+           ========================================================================== */
+        .site-footer {
+            background: var(--bg-dark);
+            color: rgba(255, 248, 240, 0.75);
+            padding: 5.5rem 0 2.5rem 0;
+            font-size: 0.92rem;
+            border-top: 4px solid var(--accent-terracotta);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 3.5rem;
+            margin-bottom: 4.5rem;
+        }
+
+        .footer-title {
+            color: var(--accent-brass);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.95rem;
+            margin-bottom: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 248, 240, 0.75);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-brass);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 248, 240, 0.1);
+            padding-top: 2.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.88rem;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1024px) {
+            .asym-hero-grid, .asym-split-2 {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .features-grid, .tips-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero-headline {
+                font-size: 2.6rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .features-grid, .tips-grid, .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-card {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 248, 240, 0.12);
+            }
+
+            .article-container, .contact-card {
+                padding: 2.2rem 1.6rem;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: span 1;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1.2rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================================================
+       SECTION 1: Sticky Navigation Bar
+       ========================================================================== -->
+    <nav class="navbar">
+        <div class="container nav-wrapper">
+            <a href="#" class="brand-logo">
+                <div class="logo-emblem">T</div>
+                <div class="brand-title">Town & Country <span>Crafts</span></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#mission">Overview</a></li>
+                <li><a href="#featured-article">Heating Journal</a></li>
+                <li><a href="#guide">Flushing Guide</a></li>
+                <li><a href="#matrix">System Matrix</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Consult Desk</a></li>
+            </ul>
+            <a href="#featured-article" class="btn btn-terracotta" style="padding: 0.65rem 1.4rem; font-size: 0.8rem;">Read Article</a>
+            <button class="mobile-toggle" aria-label="Toggle Navigation Menu">☰</button>
+        </div>
+    </nav>
+
+    <!-- ==========================================================================
+       SECTION 2: Dynamic Hero Section
+       ========================================================================== -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="asym-hero-grid">
+                <div>
+                    <div class="badge-tag">
+                        <span>🔥</span> Domestic Heating Mechanics & Winter Care
+                    </div>
+                    <h1 class="hero-headline">Managing Domestic Water Heaters Through Peak Cold Spells</h1>
+                    <p class="hero-subhead">A specialized home craft publication delivering technical frameworks for boiler maintenance, mineral descaling, temperature setting optimization, and winter pressure relief valve safety.</p>
+                    <div style="display: flex; gap: 1.2rem; flex-wrap: wrap;">
+                        <a href="#featured-article" class="btn btn-terracotta">Explore Thermal Guide →</a>
+                        <a href="#guide" class="btn btn-outline">Check Maintenance Steps</a>
+                    </div>
+                </div>
+                <div class="hero-frame">
+                    <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1000&q=80" alt="Plumber Servicing Home Water Heating System and Boiler" class="hero-img-main">
+                    <div class="hero-alert-badge">
+                        <h4>Groundwater Temperature Drop</h4>
+                        <p>Winter groundwater drops to 40°F, forcing water heaters to work 45% harder.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       SECTION 3: Quick Stats & Achievements Grid
+       ========================================================================== -->
+    <div class="container">
+        <section class="stats-banner">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">120°F</div>
+                    <div class="stat-label">Optimal Thermostat Operating Setting</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">40%</div>
+                    <div class="stat-label">Efficiency Loss From Tank Sediment</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Independent Home Crafts Focus</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">12 Yrs</div>
+                    <div class="stat-label">Average Tank Water Heater Lifespan</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==========================================================================
+       SECTION 4: Platform Overview / Editorial Mission Section
+       ========================================================================== -->
+    <section class="section-padding" id="mission">
+        <div class="container">
+            <div class="mission-panel">
+                <div class="badge-tag">Editorial Mission</div>
+                <h2 class="section-title" style="margin-bottom: 1.5rem;">Sustaining Household Warmth & Domestic Utilities</h2>
+                <p style="font-size: 1.15rem; color: var(--text-muted); max-width: 920px; margin-bottom: 1.5rem;">
+                    Town & Country Crafts operates as a bespoke Web 2.0 digital journal dedicated to rural, suburban, and historic home stewardship. We publish actionable technical guidance on domestic thermal efficiency, water heater descaling mechanics, seasonal plumbing protection, and home utility maintenance.
+                </p>
+                <p style="font-size: 1.02rem; color: var(--text-muted); max-width: 920px;">
+                    Our publication bridges traditional home care crafts with modern civil plumbing engineering, empowering property owners to prevent emergency heating outages, reduce winter energy consumption, and preserve critical home infrastructure.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       SECTION 5: Main Featured Article Section (SEO / Anchor Placement)
+       ========================================================================== -->
+    <section class="section-padding" id="featured-article" style="background: rgba(217, 107, 67, 0.03);">
+        <div class="container">
+            <article class="article-container">
+                <div class="section-header text-left" style="margin-bottom: 1.5rem;">
+                    <div class="badge-tag">Volume 64 • Thermal Systems</div>
+                    <h1 class="section-title" style="font-size: 2.6rem;">Navigating Water Heater Repairs During Peak Cold Months</h1>
+                </div>
+
+                <div class="article-meta">
+                    <span>Written by <strong>Evelyn Vance</strong>, Domestic Thermal Systems Specialist</span>
+                    <span>•</span>
+                    <span>Published in Home Utilities & Craft</span>
+                    <span>•</span>
+                    <span>9 Min Read</span>
+                </div>
+
+                <div class="article-body">
+                    <p class="article-quote">
+                        "Hot water systems work significantly harder during winter months when incoming groundwater temperatures drop drastically. Increased operational demand often highlights underlying tank sediment buildup, failing heating elements, or dangerous pressure relief valve malfunctions."
+                    </p>
+
+                    <p>
+                        During peak winter conditions across Mid-Atlantic and Northern regions, municipal and well groundwater temperatures plummet from a summer average of 65°F down to as low as 38°F–42°F. To deliver hot water at a standard comfortable tap temperature of 120°F, a residential water heater must elevate incoming water by more than 80 degrees Fahrenheit. This steep thermal delta forces electric heating elements and gas burner assemblies to fire for substantially longer cycles every single day.
+                    </p>
+
+                    <p>
+                        This sudden increase in operational load quickly exposes hidden mechanical vulnerabilities inside aging water heating units. Dissolved minerals—primarily calcium carbonate and magnesium—precipitate out of hard water during high-temperature heating cycles, settling at the bottom of storage tanks as a dense, calcified sediment layer. In gas units, this sediment acts as an insulating blanket between the burner flame and the water, causing severe tank overheating, popping noises, and premature floor corrosion. In electric models, heavy sediment encases lower heating elements, causing rapid element burnout.
+                    </p>
+
+                    <h2>Thermal Pressure Stress and Safety Valve Compliance</h2>
+                    <p>
+                        Beyond thermal transfer inefficiencies, prolonged heating cycles create elevated thermal expansion pressure inside closed domestic plumbing loops. Every water heater is equipped with a Temperature and Pressure Relief (TPR) valve designed to discharge safely if internal pressure reaches 150 PSI or temperature exceeds 210°F.
+                    </p>
+                    <p>
+                        According to residential energy safety guidelines maintained by the <a href="https://www.energy.gov/" target="_blank" rel="noopener">U.S. Department of Energy (DOE)</a>, routine maintenance of water heating equipment and setting thermostats to 120°F reduces standby heat loss while preventing scalding hazards and pressure vessel failure.
+                    </p>
+
+                    <h3>Core Maintenance Protocols for Winter Heating Systems</h3>
+                    <p>
+                        Flush domestic tanks annually and monitor temperature settings to prevent unexpected boiler or water heater breakdowns during winter. Homeowners should integrate these four preventive maintenance steps:
+                    </p>
+                    <ul>
+                        <li><strong>Annual Sediment Flushing:</strong> Attach a garden hose to the lower drain valve and flush 5 to 10 gallons of water until it runs completely clear of calcified mineral flakes.</li>
+                        <li><strong>Anode Rod Inspection:</strong> Inspect the sacrificial magnesium or aluminum anode rod every 2 years and replace it when more than 6 inches of core wire is exposed to prevent tank wall rusting.</li>
+                        <li><strong>TPR Safety Valve Testing:</strong> Manually lift the TPR valve test lever annually to confirm water discharges freely and reseats completely without continuous dripping.</li>
+                        <li><strong>Thermal Expansion Tank Verification:</strong> Check the air pre-charge pressure in the thermal expansion tank to absorb pressure spikes caused by heated water expansion.</li>
+                    </ul>
+
+                    <h2>Professional Diagnosis and Rapid Repair Services</h2>
+                    <p>
+                        When a water heater fails completely during a sub-zero cold snap, immediate professional intervention is necessary to prevent frozen domestic supply lines and restore household hygiene.
+                    </p>
+
+                    <div style="margin: 2.5rem 0; border-radius: var(--radius-sharp); overflow: hidden; border: 2.5px solid var(--bg-dark);">
+                        <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&q=80" alt="Certified Plumber Servicing Residential Water Heater and Valves">
+                        <p style="font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-top: 0.6rem; padding: 0.4rem; background: var(--bg-surface);">Routine anode rod replacement and element testing double the operational lifespan of domestic water heating tanks.</p>
+                    </div>
+
+                    <p>
+                        Services provided by <a href="https://premierplumberyork.com/" class="backlink-anchor">York Premier Plumbing</a> help homeowners quickly repair tank or tankless water heating units. Experienced technicians deploy diagnostic multimeters, heavy-duty descaling pumps, and replacement heating elements to resolve winter heating emergencies promptly.
+                    </p>
+
+                    <h2>Preserving Domestic Health, Hygiene, and Property Value</h2>
+                    <p>
+                        Maintaining continuous hot water service is far more than a luxury during freezing weather; it is fundamental to household sanitation and disease prevention.
+                    </p>
+                    <p>
+                        Public health standards published by the <a href="https://www.cdc.gov/" target="_blank" rel="noopener">Centers for Disease Control and Prevention (CDC)</a> highlight that maintaining water heating storage above 120°F prevents bacterial colonization, such as <em>Legionella pneumophila</em>, while ensuring effective dishware and laundry sanitization.
+                    </p>
+
+                    <h2>Long-Term Comfort and Winter Preparedness</h2>
+                    <p>
+                        Reliable domestic hot water is essential for hygiene, cooking, and daily household comfort. By scheduling routine autumn tank flushes, replacing depleted anode rods, and partnering with qualified local technicians, property owners safeguard their homes against winter heating failures and enjoy continuous warm water throughout the coldest months.
+                    </p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       SECTION 6: Core Features & Key Value Grid
+       ========================================================================== -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge-tag">Heating Pillars</div>
+                <h2 class="section-title">Thermal Systems Framework</h2>
+            </div>
+            <div class="features-grid">
+                <div class="portal-card">
+                    <div class="feature-icon-box">🔥</div>
+                    <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem; font-family: 'Syne', sans-serif;">Sediment Flush Protocol</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted);">Draining bottom-tank mineral sediment annually to restore thermal conductivity and eliminate popping noises.</p>
+                </div>
+                <div class="portal-card">
+                    <div class="feature-icon-box">🛡️</div>
+                    <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem; font-family: 'Syne', sans-serif;">Sacrificial Anode Care</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted);">Replacing magnesium anode rods to attract corrosive ions away from steel tank walls and double vessel life.</p>
+                </div>
+                <div class="portal-card">
+                    <div class="feature-icon-box">⚡</div>
+                    <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem; font-family: 'Syne', sans-serif;">Element & Thermostat Test</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted);">Testing upper and lower electrical elements for continuity and calibrating mechanical thermostats to 120°F.</p>
+                </div>
+                <div class="portal-card">
+                    <div class="feature-icon-box">💧</div>
+                    <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem; font-family: 'Syne', sans-serif;">TPR Pressure Safety</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted);">Verifying Temperature and Pressure Relief valve seat action to prevent dangerous tank pressure spikes.</p>
+                </div>
+                <div class="portal-card">
+                    <div class="feature-icon-box">🌀</div>
+                    <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem; font-family: 'Syne', sans-serif;">Tankless Descaling Flush</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted);">Circulating food-grade vinegar solutions through tankless copper heat exchangers to strip scale build-up.</p>
+                </div>
+                <div class="portal-card">
+                    <div class="feature-icon-box">🌡️</div>
+                    <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem; font-family: 'Syne', sans-serif;">Expansion Tank Balancing</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted);">Matching pre-charge air pressure in expansion tanks to incoming municipal water pressure for thermal absorption.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       SECTION 7: Visual Breakdown / Step-by-Step Architecture Guide
+       ========================================================================== -->
+    <section class="section-padding" id="guide" style="background: var(--bg-surface);">
+        <div class="container">
+            <div class="asym-split-2">
+                <div>
+                    <div class="badge-tag">Action Blueprint</div>
+                    <h2 class="section-title" style="margin-bottom: 1.25rem;">4-Step Water Heater Flush Sequence</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">Follow this structured maintenance sequence every autumn to remove calcified mineral scale and preserve tank efficiency.</p>
+                    <a href="#contact" class="btn btn-terracotta">Request Maintenance Guide</a>
+                </div>
+                <div class="step-list">
+                    <div class="step-card">
+                        <div class="step-index">1</div>
+                        <div>
+                            <h4 style="font-size: 1.1rem; color: var(--bg-dark); font-family: 'Syne', sans-serif;">Power & Gas Shutoff</h4>
+                            <p style="font-size: 0.92rem; color: var(--text-muted);">Switch off circuit breaker for electric units or turn gas valve to PILOT mode before draining.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-index">2</div>
+                        <div>
+                            <h4 style="font-size: 1.1rem; color: var(--bg-dark); font-family: 'Syne', sans-serif;">Attach Hose & Open Drain</h4>
+                            <p style="font-size: 0.92rem; color: var(--text-muted);">Connect garden hose to lower brass drain valve and route outlet safely into a floor drain or outdoor area.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-index">3</div>
+                        <div>
+                            <h4 style="font-size: 1.1rem; color: var(--bg-dark); font-family: 'Syne', sans-serif;">Open Pressure Valve & Flush</h4>
+                            <p style="font-size: 0.92rem; color: var(--text-muted);">Open a hot water faucet upstairs and pull TPR valve lever to break vacuum and flush out heavy sediment.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-index">4</div>
+                        <div>
+                            <h4 style="font-size: 1.1rem; color: var(--bg-dark); font-family: 'Syne', sans-serif;">Refill Tank & Restore Power</h4>
+                            <p style="font-size: 0.92rem; color: var(--text-muted);">Close drain valve, open cold supply line, purge trapped air from household faucets, and restore power.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       SECTION 8: Comprehensive Comparison Table / Value Matrix
+       ========================================================================== -->
+    <section class="section-padding" id="matrix">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge-tag">System Comparison</div>
+                <h2 class="section-title">Water Heater Architecture Matrix</h2>
+            </div>
+            <div class="table-responsive">
+                <table class="matrix-table">
+                    <thead>
+                        <tr>
+                            <th>Water Heater Type</th>
+                            <th>Winter Efficiency Impact</th>
+                            <th>Primary Maintenance Need</th>
+                            <th>Average Lifespan</th>
+                            <th>Winter Reliability Assessment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Standard Storage Tank (Gas)</strong></td>
+                            <td>Moderate (Standby heat loss)</td>
+                            <td>Annual tank sediment flush & anode check</td>
+                            <td>8–12 Years</td>
+                            <td><span style="color:var(--accent-terracotta); font-weight:700;">High (Operates during outages)</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Standard Storage Tank (Electric)</strong></td>
+                            <td>High (Longer heating cycles)</td>
+                            <td>Lower element replacement & descaling</td>
+                            <td>8–12 Years</td>
+                            <td>Requires stable electric service</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tankless Gas (On-Demand)</strong></td>
+                            <td>High (Drop in GPM flow rate)</td>
+                            <td>Vinegar heat exchanger descaling flush</td>
+                            <td>15–20 Years</td>
+                            <td>Exceptional continuous hot water</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Heat Pump / Hybrid Unit</strong></td>
+                            <td>Severe (Cold ambient air slow recovery)</td>
+                            <td>Air filter cleaning & condensate drain flush</td>
+                            <td>10–14 Years</td>
+                            <td>Requires heated indoor mechanical room</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       SECTION 9: Interactive FAQ Section (Accordion)
+       ========================================================================== -->
+    <section class="section-padding" id="faq" style="background: var(--bg-surface);">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge-tag">Frequently Asked Questions</div>
+                <h2 class="section-title">Expert Heating Answers</h2>
+            </div>
+            <div class="faq-accordion">
+                <div class="faq-item active">
+                    <button class="faq-question">
+                        Why does my water heater make loud popping or rumbling noises in winter?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Rumbling or popping sounds are caused by water trapped beneath heavy mineral sediment at the bottom of the tank. As the burner fires to heat cold winter water, trapped steam bubbles explode through the hard mineral crust. Flushing the tank eliminates this noise.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What thermostat temperature setting is safest for domestic water heaters?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        The U.S. Department of Energy recommends setting domestic water heater thermostats to 120°F (49°C). This temperature provides ample thermal comfort for dishwashing and bathing while preventing scalding injuries and curbing standby energy loss.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How often should a tankless water heater be descaled?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Tankless water heaters should be flushed with food-grade vinegar once every 12 months. In hard water areas, bi-annual descaling is recommended to prevent mineral scale from clogging the narrow copper heat exchanger channels.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Why does hot water run out faster during winter months?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Incoming groundwater temperatures drop significantly in winter, requiring the water heater to expend far more energy to achieve tap temperature. Additionally, colder room temperatures increase tank standby heat loss, reducing usable continuous hot water volume.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       SECTION 10: Expert Tips & Best Practices Cards
+       ========================================================================== -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge-tag">Craft Best Practices</div>
+                <h2 class="section-title">Field Rules for Water Heater Care</h2>
+            </div>
+            <div class="tips-grid">
+                <div class="portal-card tip-card">
+                    <h3 style="font-size: 1.1rem; font-family: 'Syne', sans-serif; margin-bottom: 0.6rem; color: var(--accent-terracotta);">Rule #1: Annual Flush</h3>
+                    <p style="font-size: 0.94rem; color: var(--text-muted);">Flush 5 to 10 gallons of water from the bottom drain valve every October to prevent calcified mineral crust formation.</p>
+                </div>
+                <div class="portal-card tip-card">
+                    <h3 style="font-size: 1.1rem; font-family: 'Syne', sans-serif; margin-bottom: 0.6rem; color: var(--accent-terracotta);">Rule #2: Insulate Pipes</h3>
+                    <p style="font-size: 0.94rem; color: var(--text-muted);">Install pre-slit foam insulation jackets on the first 6 feet of hot and cold water pipes connected to your water heater.</p>
+                </div>
+                <div class="portal-card tip-card">
+                    <h3 style="font-size: 1.1rem; font-family: 'Syne', sans-serif; margin-bottom: 0.6rem; color: var(--accent-terracotta);">Rule #3: Test TPR Valve</h3>
+                    <p style="font-size: 0.94rem; color: var(--text-muted);">Lift the test lever on your Temperature and Pressure Relief valve annually to ensure the safety seat operates freely.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       SECTION 11: User Feedback & Testimonials Showcase
+       ========================================================================== -->
+    <section class="section-padding" style="background: var(--bg-surface);">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge-tag">Community Feedback</div>
+                <h2 class="section-title">Perspectives From Home Stewards</h2>
+            </div>
+            <div class="testimonial-grid">
+                <div class="portal-card">
+                    <p style="font-style: italic; color: var(--text-muted); font-size: 1.05rem;">
+                        "Our 50-gallon gas water heater started making terrible popping noises during a January cold snap. Following the tank flush guide on Town & Country Crafts removed two buckets of calcified scale and completely restored quiet operation!"
+                    </p>
+                    <div class="author-box">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80" alt="Eleanor Ross" class="author-avatar">
+                        <div>
+                            <h4 style="font-size: 0.95rem; color: var(--bg-dark); font-family: 'Syne', sans-serif;">Eleanor Ross</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">Home Owner, Historic Property</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portal-card">
+                    <p style="font-style: italic; color: var(--text-muted); font-size: 1.05rem;">
+                        "Understanding how groundwater drops in winter helped me realize why our hot water was running out so fast. Replacing our depleted anode rod and recalibrating thermostats gave us incredible results!"
+                    </p>
+                    <div class="author-box">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Marcus Vance" class="author-avatar">
+                        <div>
+                            <h4 style="font-size: 0.95rem; color: var(--bg-dark); font-family: 'Syne', sans-serif;">Marcus Vance</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">Suburban Home Steward</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       SECTION 12: Highlighted Resource Banner / Quick Action Callout
+       ========================================================================== -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="resource-banner">
+                <div class="asym-split-2">
+                    <div>
+                        <span class="badge-tag" style="background: rgba(224, 159, 62, 0.25); color: var(--accent-brass);">Free Thermal Whitepaper</span>
+                        <h2 style="font-size: 2.2rem; font-family: 'Syne', sans-serif; margin: 0.8rem 0; color: #FFFFFF;">Winter Water Heater Care Blueprint</h2>
+                        <p style="color: rgba(255, 248, 240, 0.82); font-size: 1.05rem;">Download our comprehensive 24-page technical guide covering sediment flushes, anode rod replacement, and tankless descaling routines.</p>
+                    </div>
+                    <div style="text-align: right;">
+                        <a href="#contact" class="btn btn-terracotta" style="padding: 1.1rem 2.4rem;">Download PDF Blueprint</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       SECTION 13: Functional Contact Form Section
+       ========================================================================== -->
+    <section class="section-padding" id="contact">
+        <div class="container">
+            <div class="asym-split-2">
+                <div>
+                    <div class="badge-tag">Editorial Desk</div>
+                    <h2 class="section-title" style="margin-bottom: 1.25rem;">Consult With Our Thermal Specialists</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">Have questions regarding water heater flushing, tankless descaling, or wish to submit a technical case study? Reach out to our team.</p>
+                    <div style="display: flex; flex-direction: column; gap: 1rem; color: var(--text-muted); font-size: 0.95rem;">
+                        <p>📍 <strong>Editorial Focus:</strong> Rural & Suburban Home Thermal Craft</p>
+                        <p>📧 <strong>Technical Desk:</strong> journal@townandcountrycrafts.com</p>
+                        <p>⏱️ <strong>Response Window:</strong> 24–48 Business Hours</p>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <form id="contactForm" onsubmit="event.preventDefault(); alert('Thank you for contacting Town & Country Crafts. Your thermal inquiry has been logged.');">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="fname">First Name</label>
+                                <input type="text" id="fname" class="form-control" placeholder="Eleanor" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lname">Last Name</label>
+                                <input type="text" id="lname" class="form-control" placeholder="Ross" required>
+                            </div>
+                            <div class="form-group full">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" class="form-control" placeholder="eleanor@example.com" required>
+                            </div>
+                            <div class="form-group full">
+                                <label for="heaterType">Water Heater Configuration</label>
+                                <select id="heaterType" class="form-control">
+                                    <option>Standard Gas Storage Tank Unit</option>
+                                    <option>Standard Electric Storage Tank Unit</option>
+                                    <option>Tankless Gas / On-Demand Heater</option>
+                                    <option>Heat Pump / Hybrid Water Heater</option>
+                                </select>
+                            </div>
+                            <div class="form-group full">
+                                <label for="message">Inquiry / Maintenance Notes</label>
+                                <textarea id="message" rows="4" class="form-control" placeholder="Describe your water heater symptoms or winter maintenance question..." required></textarea>
+                            </div>
+                            <div class="form-group full">
+                                <button type="submit" class="btn btn-dark" style="width: 100%;">Submit Consultation Request</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       SECTION 14: Comprehensive Footer
+       ========================================================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="#" class="brand-logo" style="margin-bottom: 1.2rem;">
+                        <div class="logo-emblem">T</div>
+                        <div class="brand-title" style="color: #FFFFFF;">Town & Country <span>Crafts</span></div>
+                    </a>
+                    <p style="font-size: 0.9rem; line-height: 1.6; max-width: 320px;">
+                        An independent digital Web 2.0 publication devoted to domestic thermal systems, home preservation craft, and seasonal plumbing stewardship.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="#mission">Overview</a></li>
+                        <li><a href="#featured-article">Heating Journal</a></li>
+                        <li><a href="#guide">Action Blueprint</a></li>
+                        <li><a href="#matrix">System Matrix</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Technical Topics</h4>
+                    <ul class="footer-links">
+                        <li><a href="#featured-article">Sediment Flushing</a></li>
+                        <li><a href="#featured-article">Anode Rod Replacement</a></li>
+                        <li><a href="#featured-article">TPR Valve Safety</a></li>
+                        <li><a href="#featured-article">Tankless Descaling</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Publication Details</h4>
+                    <p style="font-size: 0.86rem; line-height: 1.6; margin-bottom: 1rem;">
+                        Documenting domestic heating mechanics and seasonal home care across regional communities.
+                    </p>
+                    <div style="font-size: 0.82rem; color: var(--accent-brass);">
+                        ● Subdomain: townandcountrycrafts
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>
+                    © 2026 Town & Country Crafts. All rights reserved. Domestic Stewardship Portal.
+                </div>
+                <div style="display: flex; gap: 1.6rem;">
+                    <a href="#" style="color: rgba(255, 248, 240, 0.6);">Privacy Policy</a>
+                    <a href="#" style="color: rgba(255, 248, 240, 0.6);">Terms of Service</a>
+                    <a href="#" style="color: rgba(255, 248, 240, 0.6);">Editorial Ethics</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Minimal Vanilla JS for Accordion & Navigation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // FAQ Accordion Interactivity
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const btn = item.querySelector('.faq-question');
+                btn.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    faqItems.forEach(i => i.classList.remove('active'));
+                    
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+
+            // Mobile Menu Toggle
+            const mobileToggle = document.querySelector('.mobile-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (mobileToggle) {
+                mobileToggle.addEventListener('click', () => {
+                    if (navLinks.style.display === 'flex') {
+                        navLinks.style.display = 'none';
+                    } else {
+                        navLinks.style.display = 'flex';
+                        navLinks.style.flexDirection = 'column';
+                        navLinks.style.position = 'absolute';
+                        navLinks.style.top = '100%';
+                        navLinks.style.left = '0';
+                        navLinks.style.width = '100%';
+                        navLinks.style.background = '#FFF8F0';
+                        navLinks.style.padding = '1.5rem';
+                        navLinks.style.borderBottom = '2.5px solid var(--bg-dark)';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
